@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY}
+      - BAWS_ACCESS_KEY_ID=${BAWS_ACCESS_KEY_ID}
+      - BAWS_SECRET_ACCESS_KEY=${BAWS_SECRET_ACCESS_KEY}
+      - NEXT_PUBLIC_INCLUDE_LEFT_SIDEBAR=true
+      - NEXT_PUBLIC_INCLUDE_RIGHT_SIDEBAR=true
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "require('http').get('http://localhost:3000', (r) => {if (r.statusCode !== 200) throw new Error(r.statusCode)})"]
+      interval: 30s
+      timeout: 3s
+      retries: 3
+      start_period: 5s
+    volumes:
+      - ./public:/app/public:ro
