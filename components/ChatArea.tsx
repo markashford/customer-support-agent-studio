@@ -607,7 +607,7 @@ function ChatArea() {
   }, []);
 
   return (
-    <Card className="glass-card relative z-10 mb-4 ml-4 mr-4 flex flex-1 flex-col rounded-2xl">
+    <Card id="chat" className="glass-card relative z-10 mb-4 ml-4 mr-4 flex flex-1 flex-col rounded-2xl">
       <CardContent className="flex-1 flex flex-col overflow-hidden pt-4 px-4 pb-0">
         <ConversationHeader
           selectedModel={selectedModel}

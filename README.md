@@ -27,8 +27,8 @@ A production-ready AI customer support system built with Next.js, leveraging Cla
 
 ```bash
 # Clone repository
-git clone <your-repo-url>
-cd customer-support-agent
+git clone https://github.com/markashford91/customer-support-agent-studio.git
+cd customer-support-agent-studio
 
 # Install dependencies
 npm install
@@ -299,7 +299,7 @@ ChatArea.tsx tracks:
 
 ## 📄 License
 
-This project is provided as-is. Refer to LICENSE file for details.
+This project is provided as-is under the MIT License. See LICENSE for details.
 
 ## 🤝 Contributing
 

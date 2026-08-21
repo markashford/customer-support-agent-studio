@@ -91,12 +91,12 @@ const TopNavBar = () => {
         <div className="font-bold text-xl flex gap-3 items-center">
           <Image
             src={theme === "dark" ? "/wordmark-dark.svg" : "/wordmark.svg"}
-            alt="Company Wordmark"
+            alt="Support Studio"
             width={112}
             height={20}
           />
           <span className="hidden rounded-full border border-border/70 bg-background/70 px-3 py-1 text-xs font-medium text-muted-foreground md:inline-flex">
-            Portfolio Build
+            Support Studio
           </span>
         </div>
         <div className="flex items-center gap-2">
@@ -142,13 +142,9 @@ const TopNavBar = () => {
               </DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
-          <Link
-            href="https://github.com/anthropics/anthropic-quickstarts"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <Link href="/#chat" className="hidden sm:inline-flex">
             <Button variant="outline" className="text-foreground">
-              Template Source
+              Open Chat
             </Button>
           </Link>
         </div>
