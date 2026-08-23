@@ -3,24 +3,10 @@ import { z } from "zod";
 import { retrieveContext, RAGSource } from "@/app/lib/utils";
 import crypto from "crypto";
 import customerSupportCategories from "@/app/lib/customer_support_categories.json";
+import { parseChatRequest } from "@/lib/chat-schema";
 
 const anthropic = new Anthropic({
   apiKey: process.env.ANTHROPIC_API_KEY,
-});
-
-// Validation schema for incoming requests
-const chatRequestSchema = z.object({
-  messages: z
-    .array(
-      z.object({
-        role: z.enum(["user", "assistant"]),
-        content: z.string().min(1).max(4000),
-      }),
-    )
-    .min(1)
-    .max(50),
-  model: z.string().min(1).max(100),
-  knowledgeBaseId: z.string().min(1).max(200),
 });
 
 // Debug message helper function
@@ -103,7 +89,7 @@ export async function POST(req: Request) {
     // Validate incoming request structure
     let validatedInput;
     try {
-      validatedInput = chatRequestSchema.parse(body);
+      validatedInput = parseChatRequest(body);
     } catch (validationError) {
       console.error("❌ Request validation failed:", validationError);
       return new Response(

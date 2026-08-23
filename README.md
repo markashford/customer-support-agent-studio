@@ -195,6 +195,14 @@ GitHub Actions automatically:
 
 View workflow in `.github/workflows/ci.yml`.
 
+## Tests
+
+```bash
+npm test
+```
+
+Request validation for `/api/chat` lives in `lib/chat-schema.ts` and is covered by Vitest.
+
 ## 🎨 Customization
 
 ### Themes
