@@ -183,12 +183,12 @@ export BAWS_SECRET_ACCESS_KEY=your_secret
 docker-compose up
 ```
 
-The Dockerfile uses multi-stage builds for optimal image size (~400MB) and includes health checks.
+The Dockerfile uses multi-stage builds for optimal image size (~400MB) and includes health checks against `/api/health`.
 
 ## 🔄 CI/CD Pipeline
 
 GitHub Actions automatically:
-- ✅ Runs linter on commits
+- ✅ Runs unit tests and the linter on commits
 - ✅ Builds Next.js production bundle
 - ✅ Tests multiple Node versions (18.x, 20.x)
 - 🐳 Builds Docker image on main branch push

@@ -1,11 +1,9 @@
 # Git
 .git
-.gitignore
 .github
 
 # Dependencies
 node_modules
-package-lock.json
 npm-debug.log
 yarn-error.log
 
@@ -32,12 +30,3 @@ coverage
 # OS files
 .DS_Store
 Thumbs.db
-
-# Project specific
-tutorial
-.eslintrc.json
-tailwind.config.ts
-postcss.config.mjs
-tsconfig.json
-components.json
-amplify.yml

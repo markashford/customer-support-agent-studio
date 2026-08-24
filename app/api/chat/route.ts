@@ -120,7 +120,6 @@ export async function POST(req: Request) {
         latestMessageLength: latestMessage.length,
         modelRequested: model,
         knowledgeBaseId: knowledgeBaseId,
-        anthropicKeySlice: process.env.ANTHROPIC_API_KEY?.slice(0, 4) + "****",
       }),
     ).slice(0, MAX_DEBUG_LENGTH);
 
